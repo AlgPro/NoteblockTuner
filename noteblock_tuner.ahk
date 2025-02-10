@@ -1,3 +1,7 @@
+#NoEnv
+#SingleInstance Force
+#MaxHotkeysPerInterval 40
+
 ParseCommand(command) {
 	If RegExMatch(command, "/setblock (\d+) (\d+) (\d+) minecraft:note_block\[instrument=\w+,note=(\d+),powered=\w+\]", match) {
 		x := match1
@@ -8,4 +12,9 @@ ParseCommand(command) {
 	}
 }
 
-B::ParseCommand(Clipboard)
+B::
+Clipboard=""
+SendInput, {f3 down}i{f3 up}
+ClipWait
+result := ParseCommand(Clipboard)
+return
