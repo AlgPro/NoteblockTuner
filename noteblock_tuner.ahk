@@ -17,7 +17,7 @@ TuneNoteblock(note, desired) {
 		clicks += 25
 	}
 	Loop %clicks% {
-		;MouseClick, R 
+		MouseClick, R 
 	}
 }
 
